@@ -37,7 +37,7 @@ config :apns,
 config :apns,
   callback_module:  APNS.Callback,
   keyfile:          nil,
-  cert_password:    nil,
+  cert_password:    nil, # must be a char list
   timeout:          30000,
   feedback_timeout: 1200,
   reconnect_after:  1000

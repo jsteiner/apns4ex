@@ -221,7 +221,7 @@ defmodule APNS.Connection.Worker do
     ]
     config = Enum.reduce opts, %{}, fn({key, default}, map) ->
       val = Application.get_env(:apns, key, default)
-      if is_list(val) do
+      if is_list(val) && val[env] do
         val = val[env]
       end
       Map.put(map, key, val)
